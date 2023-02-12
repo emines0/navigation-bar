@@ -17,41 +17,25 @@ const Navbar = () => {
         </div>
         <div className='links-container show-container'>
           <ul className='links'>
-            <li>
-              <a href='#'>home</a>
-            </li>
-            <li>
-              <a href='#'>about</a>
-            </li>
-            <li>
-              <a href='#'>projects</a>
-            </li>
-            <li>
-              <a href='#'>profile</a>
-            </li>
+            {links.map((link) => {
+              const { id, url, text } = link
+              return (
+                <li key={id}>
+                  <a href={url}>{text}</a>
+                </li>
+              )
+            })}
           </ul>
         </div>
         <ul className='social-icons'>
-          <li>
-            <a href='https://www.facebook.com'>
-              <FaTwitter />
-            </a>
-          </li>
-          <li>
-            <a href='https://www.facebook.com'>
-              <FaTwitter />
-            </a>
-          </li>
-          <li>
-            <a href='https://www.facebook.com'>
-              <FaTwitter />
-            </a>
-          </li>
-          <li>
-            <a href='https://www.facebook.com'>
-              <FaTwitter />
-            </a>
-          </li>
+          {social.map((link) => {
+            const { id, url, icon } = link
+            return (
+              <li key={id}>
+                <a href={url}>{icon}</a>
+              </li>
+            )
+          })}
         </ul>
       </div>
     </nav>
@@ -59,11 +43,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-/*
- *           {social.map((link) => {
-            const { id, url, icon } = link
-            <li key={id}>
-              <a href={url}>{icon}</a>
-            </li>
-          })} 
- */
