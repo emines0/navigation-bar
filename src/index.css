@@ -206,6 +206,10 @@ nav {
   }
   .links-container {
     height: auto !important;
+    /* 
+     * adding to override css 
+     * if the nav is hidden (height:0px) from the smaller screen, it needs to be visible on bigger screen
+     */
   }
   .links {
     display: flex;
